@@ -1,0 +1,77 @@
+\documentclass{article}
+
+\usepackage[margin=0.8in,bottom=1.25in,columnsep=.4in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{cite}
+\usepackage{multicol}
+
+\newcommand{\del}{\partial}
+
+\begin{document}
+\title{
+50.039 Theory and Practice of Deep Learning \\
+Project Proposal
+}
+
+\author{Wang Tianduo 1002963, Wu Tianyu 1002961, Luo Yifan 1002975}
+\date{\today}
+\maketitle
+
+\section{Problem Statement}\footnote{This is a Kaggle Competition and you may find more details at \\ https://www.kaggle.com/c/plant-pathology-2020-fgvc7/overview/description}
+Misdiagnosis of the many diseases impacting agricultural crops can lead to misuse of chemicals leading to the emergence of resistant pathogen strains, increased input costs, and more outbreaks with significant economic loss and environmental impacts. Current disease diagnosis based on human scouting is time-consuming and expensive, and although computer-vision based models have the promise to increase efficiency, the great variance in symptoms due to age of infected tissues, genetic variations, and light conditions within trees decreases the accuracy of detection.
+
+\section{Objectives}
+Objectives of ‘Plant Pathology Challenge’ are to train a model using images of training dataset to 
+\begin{enumerate}
+    \item Accurately classify a given image from testing dataset into different diseased category or a healthy leaf
+    \item Accurately distinguish between many diseases, sometimes more than one on a single leaf
+    \item Deal with rare classes and novel symptoms
+    \item Address depth perception—angle, light, shade, physiological age of the leaf
+    \item Incorporate expert knowledge in identification, annotation, quantification, and guiding computer vision to search for relevant features during learning
+\end{enumerate}
+
+\section{Expected Input and Output}
+Given a photo of an apple leaf, can you accurately assess its health? This competition will challenge you to distinguish between leaves which are healthy, those which are infected with apple rust, those that have apple scab, and those with more than one disease.
+
+\subsection*{Files}
+
+\begin{enumerate}
+    \item train.csv \\
+- image\_id: the foreign key for the parquet files\\
+- combinations: one of the target labels\\
+- healthy: one of the target labels\\
+- rust: one of the target labels\\
+- scab: one of the target labels
+    \item images/\\
+A folder containing the train and test images, in jpg format.
+    \item test.csv\\
+- image\_id: the foreign key for the parquet files
+    \item sample\_submission.csv\\
+- image\_id: the foreign key for the parquet files\\
+- combinations: one of the target labels\\
+- healthy: one of the target labels\\
+- rust: one of the target labels\\
+- scab: one of the target labels
+\end{enumerate}
+
+\section{Dataset}
+Provided by Cornell Initiative for Digital Agriculture (CIDA). This competition is part of the Fine-Grained Visual Categorization FGVC7 workshop at the CVPR 2020
+
+\section{Team members}
+Wang Tianduo 1002963 \\
+Wu Tianyu 1002961 \\
+Luo Yifan 1002975 \\ 
+
+\section{Deliverables}
+\begin{enumerate}
+    \item Code for training
+    \item Code for deployment
+    \item An app with GUI to demonstrate the result
+    \item A detailed report covered everything we do
+    \item Team members and their contributions
+    \item 5-min video persentation
+\end{enumerate}
+\end{document}
